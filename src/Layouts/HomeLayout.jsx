@@ -47,7 +47,7 @@ const HomeLayout = ({ children }) => {
               <Link to="/contect">Contect Us</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/about">About Us Quick</Link>
             </li>
           </ul>
         </div>
