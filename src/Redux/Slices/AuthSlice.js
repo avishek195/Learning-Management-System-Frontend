@@ -20,8 +20,8 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
       error: "Failed to create account",
     });
     return (await res).data;
-  } catch (err) {
-    toast.err(err?.response?.data?.message);
+  } catch (error) {
+    toast.err(error?.message);
   }
 });
 export const LoginUser = createAsyncThunk("/auth/login", async (data) => {
@@ -35,8 +35,8 @@ export const LoginUser = createAsyncThunk("/auth/login", async (data) => {
       error: "Failed to Log in",
     });
     return (await res).data;
-  } catch (err) {
-    toast.err(err?.response?.data?.message);
+  } catch (error) {
+    toast.err(error?.message);
   }
 });
 export const Logout = createAsyncThunk("/auth/logout", async () => {
@@ -50,8 +50,8 @@ export const Logout = createAsyncThunk("/auth/logout", async () => {
       error: "Failed to Logout",
     });
     return (await res).data;
-  } catch (err) {
-    toast.err(err?.response?.data?.message);
+  } catch (error) {
+    toast.err(error?.message);
   }
 });
 
