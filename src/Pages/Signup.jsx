@@ -40,9 +40,7 @@ const Signup = () => {
       });
 
       const fileReader = new FileReader();
-      console.log(fileReader);
       fileReader.readAsDataURL(uploadImage);
-      console.log(fileReader.readAsDataURL);
       fileReader.addEventListener("load", function () {
         setPreviewImaeg(this.result);
       });
