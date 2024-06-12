@@ -1,11 +1,23 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HomeLayout from "../../Layouts/HomeLayout";
+import { cancelCourseBundel } from "../../Redux/Slices/RazorpaySlice";
+import { getUserData } from "../../Redux/Slices/AuthSlice";
+import toast from "react-hot-toast";
 
 const Profile = () => {
   const userData = useSelector((state) => state?.auth?.data);
   const dispatch = useDispatch();
+  const naviagte = useNavigate();
+
+  async function handleCencellation() {
+    toast.info("Initiating cancellation");
+    await dispatch(cancelCourseBundel());
+    await dispatch(getUserData());
+    toast.success("CanCellation complete");
+    naviagte("/");
+  }
 
   useEffect(() => {
     // dispatch(getUserData())
